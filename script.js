@@ -17,7 +17,7 @@ document.getElementById('btnRetry').addEventListener('click', function () {
     orderNumber = 0;
 })
 
-document.getElementById('btnOver').addEventListener('click', function () {
+document.getElementById('btnOver').addEventListener('click', function () { // Код для кнопки «Больше»; происходит изменение нижней границы поискового диапазона.
     if (gameRun){
         if (minValue === maxValue){
             const phraseRandom = Math.round( Math.random());
@@ -37,7 +37,27 @@ document.getElementById('btnOver').addEventListener('click', function () {
     }
 })
 
-document.getElementById('btnEqual').addEventListener('click', function () {
+document.getElementById('btnLess').addEventListener('click', function () { // Код для кнопки «Меньше»; происходит изменение верхней границы поискового диапазона.
+    if (gameRun){
+        if (minValue === maxValue){
+            const phraseRandom = Math.round( Math.random());
+            const answerPhrase = (phraseRandom === 1) ?
+                `Вы загадали неправильное число!\n\u{1F914}` :
+                `Я сдаюсь..\n\u{1F92F}`;
+
+            answerField.innerText = answerPhrase;
+            gameRun = false;
+        } else {
+            maxValue = answerNumber - 1;
+            answerNumber  = Math.floor((minValue + maxValue) / 2);
+            orderNumber++;
+            orderNumberField.innerText = orderNumber;
+            answerField.innerText = `Вы загадали число ${answerNumber }?`;
+        }
+    }
+})
+
+document.getElementById('btnEqual').addEventListener('click', function () { // Код для кнопки "Верно".
     if (gameRun){
         answerField.innerText = `Я всегда угадываю\n\u{1F60E}`
         gameRun = false;
