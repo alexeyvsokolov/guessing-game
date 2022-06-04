@@ -1,20 +1,25 @@
 let minValue = parseInt(prompt('Минимальное знание числа для игры','0'));
 let maxValue = parseInt(prompt('Максимальное знание числа для игры','100'));
 alert(`Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`);
-let answerNumber = Math.floor((minValue + maxValue) / 2); // Вопрос: "Вы загадали число " "?" - Середина числового диапазона
-let orderNumber = 1;
+let answerNumber = Math.floor((minValue + maxValue) / 2); // Середина числового диапазона
+let orderNumber = 1; // Номер первого вопроса.
 let gameRun = true;
 
 const orderNumberField = document.getElementById('orderNumberField'); // Вопрос №_
 const answerField = document.getElementById('answerField');
 
-orderNumberField.innerText = orderNumber;
-answerField.innerText = `Вы загадали число ${answerNumber}?`;
+orderNumberField.innerText = orderNumber; // Вопрос № 1
+answerField.innerText = `Вы загадали число ${answerNumber}?`; // Вы загадали число [__]? - Середина числового диапазона (answerNumber - подставляется середина числового диапазона).
 
-document.getElementById('btnRetry').addEventListener('click', function () {
-    minValue = 0;
-    maxValue = 100;
-    orderNumber = 0;
+document.getElementById('btnRetry').addEventListener('click', function () { // Кнопка "Заново"
+    minValue = parseInt(prompt('Минимальное знание числа для игры','0'));
+    maxValue = parseInt(prompt('Максимальное знание числа для игры','100'));
+    alert(`Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`);
+    answerNumber = Math.floor((minValue + maxValue) / 2); // Середина числового диапазона
+    orderNumber = 1; // Номер первого вопроса.
+    orderNumberField.innerText; // Вопрос № 1
+    answerField.innerText;
+    gameRun = true;
 })
 
 document.getElementById('btnOver').addEventListener('click', function () { // Код для кнопки «Больше».
