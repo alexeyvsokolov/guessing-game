@@ -37,7 +37,12 @@ document.getElementById('btnOver').addEventListener('click', function () { // К
             answerNumber = Math.floor((minValue + maxValue) / 2);
             orderNumber++;
             orderNumberField.innerText = orderNumber;
-            answerField.innerText = `Вы загадали число ${answerNumber }?`;
+            const phraseRandom = Math.round(Math.random() * 2); // Генерируется случайное число от 0 до 2.
+            const answerPhrase = (phraseRandom === 1) ?
+                `Вы загадали число ${answerNumber }?` :
+                `Наверное, это число ${answerNumber }?`;
+
+            answerField.innerText = answerPhrase;
         }
     }
 })
@@ -57,7 +62,12 @@ document.getElementById('btnLess').addEventListener('click', function () { // К
             answerNumber = Math.floor((minValue + maxValue) / 2);
             orderNumber++;
             orderNumberField.innerText = orderNumber;
-            answerField.innerText = `Вы загадали число ${answerNumber }?`;
+            const phraseRandom = Math.round(Math.random() * 2); // Генерируется случайное число от 0 до 2.
+            const answerPhrase = (phraseRandom === 1) ?
+                `Вы загадали число ${answerNumber }?` :
+                `Наверное, это число ${answerNumber }?`;
+
+            answerField.innerText = answerPhrase;
         }
     }
 })
