@@ -17,15 +17,15 @@ document.getElementById('btnRetry').addEventListener('click', function () { // �
     alert(`Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`);
     answerNumber = Math.floor((minValue + maxValue) / 2); // Середина числового диапазона
     orderNumber = 1; // Номер первого вопроса.
-    orderNumberField.innerText; // Вопрос № 1
-    answerField.innerText;
+    orderNumberField.innerText = orderNumber; // Вопрос № 1
+    answerField.innerText = `Вы загадали число ${answerNumber}?`;
     gameRun = true;
 })
 
 document.getElementById('btnOver').addEventListener('click', function () { // Код для кнопки «Больше».
     if (gameRun){
         if (minValue === maxValue){
-            const phraseRandom = Math.round(Math.random());
+            const phraseRandom = Math.round(Math.random()); // Генерируется случайное число от 0 до 1.
             const answerPhrase = (phraseRandom === 1) ?
                 `Вы загадали неправильное число!\n\u{1F914}` :
                 `Я сдаюсь..\n\u{1F92F}`;
