@@ -74,7 +74,12 @@ document.getElementById('btnLess').addEventListener('click', function () { // К
 
 document.getElementById('btnEqual').addEventListener('click', function () { // Код для кнопки "Верно".
     if (gameRun){
-        answerField.innerText = `Я всегда угадываю\n\u{1F60E}`
+        const phraseRandom = Math.round(Math.random() * 2); // Генерируется случайное число от 0 до 2.
+        const answerPhrase = (phraseRandom === 1) ?
+            `Я всегда угадываю\n\u{1F60E}` :
+            `Yes! \n\u{1F60E}`;
+
+        answerField.innerText = answerPhrase
         gameRun = false;
     }
 })
