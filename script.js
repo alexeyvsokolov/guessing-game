@@ -24,6 +24,9 @@ document.getElementById('btnRetry').addEventListener('click', function () { // �
     maxValue = parseInt(prompt('Максимальное знание числа для игры','100'));
     minValue = (minValue < -999) ? minValue = -999 : (minValue > 999) ? minValue = 999 : minValue;
     maxValue = (maxValue > 999) ? maxValue = 999 : (maxValue < -999) ? maxValue = -999 : maxValue;
+    if (maxValue < minValue) {
+        [maxValue, minValue] = [minValue, maxValue]; // Значения меняются местами если max меньше min.
+    }
     alert(`Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`);
     answerNumber = Math.floor((minValue + maxValue) / 2); // Середина числового диапазона
     orderNumber = 1; // Номер первого вопроса.
