@@ -47,11 +47,29 @@ document.getElementById('btnRetry').addEventListener('click', function () { // �
 document.getElementById('btnOver').addEventListener('click', function () { // Код для кнопки «Больше».
     if (gameRun){
         if (minValue === maxValue){
-            const phraseRandom = Math.round(Math.random()); // Генерируется случайное число от 0 до 1.
+            const phraseRandom = Math.round(Math.random() * 3);
+            switch (phraseRandom) {
+                case 0: 
+                    answerPhrase = `Вы загадали неправильное число!\n\u{1F914}`
+                    break;      
+            
+                case 1:
+                    answerPhrase = `Вы забыли, какое число загадали?\n\u{1F92A}`
+                    break;
+
+                case 2: 
+                    answerPhrase = `Вы ошиблись с числом!\n\u{1F9D0}`
+                    break;      
+            
+                case 3:
+                    answerPhrase = `Не жульничайте!\n\u{1F620}`
+                    break;
+            }
+            /* Старый метод генерации фразы спомощью тернарного оператора.
             const answerPhrase = (phraseRandom === 1) ?
                 `Вы загадали неправильное число!\n\u{1F914}` :
                 `Я сдаюсь..\n\u{1F92F}`;
-
+            */
             answerField.innerText = answerPhrase;
             gameRun = false;
         } else {
@@ -94,11 +112,29 @@ document.getElementById('btnOver').addEventListener('click', function () { // К
 document.getElementById('btnLess').addEventListener('click', function () { // Код для кнопки «Меньше».
     if (gameRun){
         if (minValue === maxValue || minValue == answerNumber){
-            const phraseRandom = Math.round(Math.random());
+            const phraseRandom = Math.round(Math.random() * 3);
+            switch (phraseRandom) {
+                case 0: 
+                    answerPhrase = `Вы загадали неправильное число!\n\u{1F914}`
+                    break;      
+            
+                case 1:
+                    answerPhrase = `Вы забыли, какое число загадали?\n\u{1F92A}`
+                    break;
+
+                case 2: 
+                    answerPhrase = `Вы ошиблись с числом!\n\u{1F9D0}`
+                    break;      
+            
+                case 3:
+                    answerPhrase = `Не жульничайте!\n\u{1F620}`
+                    break;
+            }
+            /* Старый метод генерации фразы спомощью тернарного оператора.
             const answerPhrase = (phraseRandom === 1) ?
                 `Вы загадали неправильное число!\n\u{1F914}` :
                 `Я сдаюсь..\n\u{1F92F}`;
-
+            */
             answerField.innerText = answerPhrase;
             gameRun = false;
         } else {
