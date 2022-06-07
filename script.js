@@ -176,11 +176,29 @@ document.getElementById('btnLess').addEventListener('click', function () { // К
 
 document.getElementById('btnEqual').addEventListener('click', function () { // Код для кнопки "Верно".
     if (gameRun){
-        const phraseRandom = Math.round(Math.random() * 2); // Генерируется случайное число от 0 до 2.
+        const phraseRandom = Math.round(Math.random() * 3);
+            switch (phraseRandom) {
+                case 0: 
+                    answerPhrase = `Я всегда угадываю\n\u{1F60E}`
+                    break;      
+            
+                case 1:
+                    answerPhrase = `Yes! \n\u{1F60E}`
+                    break;
+
+                case 2: 
+                    answerPhrase = `Отлично!\n\u{1F973}`
+                    break;      
+            
+                case 3:
+                    answerPhrase = `Я выиграл!\n\u{1F929}`
+                    break;
+            }
+        /*
         const answerPhrase = (phraseRandom === 1) ?
             `Я всегда угадываю\n\u{1F60E}` :
             `Yes! \n\u{1F60E}`;
-
+        */
         answerField.innerText = answerPhrase
         gameRun = false;
     }
