@@ -8,6 +8,11 @@ if (maxValue < minValue) {
     [maxValue, minValue] = [minValue, maxValue]; // Значения меняются местами если max меньше min.
 }
 
+if (Number.isNaN(maxValue) || Number.isNaN(minValue)) {
+    minValue = 0;
+    maxValue = 100;
+}
+
 alert(`Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`);
 let answerNumber = Math.floor((minValue + maxValue) / 2); // Середина числового диапазона
 let orderNumber = 1; // Номер первого вопроса.
@@ -26,6 +31,10 @@ document.getElementById('btnRetry').addEventListener('click', function () { // �
     maxValue = (maxValue > 999) ? maxValue = 999 : (maxValue < -999) ? maxValue = -999 : maxValue;
     if (maxValue < minValue) {
         [maxValue, minValue] = [minValue, maxValue]; // Значения меняются местами если max меньше min.
+    }
+    if (Number.isNaN(maxValue) || Number.isNaN(minValue)) {
+        minValue = 0;
+        maxValue = 100;
     }
     alert(`Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`);
     answerNumber = Math.floor((minValue + maxValue) / 2); // Середина числового диапазона
