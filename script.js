@@ -59,11 +59,33 @@ document.getElementById('btnOver').addEventListener('click', function () { // К
             answerNumber = Math.floor((minValue + maxValue) / 2);
             orderNumber++;
             orderNumberField.innerText = orderNumber;
-            const phraseRandom = Math.round(Math.random() * 2); // Генерируется случайное число от 0 до 2.
+            const phraseRandom = Math.round(Math.random() * 4); // Генерируется случайное число от 0 до 4.
+            switch (phraseRandom) {
+                case 0: 
+                    answerPhrase = `Вы загадали число ${answerNumber }?`
+                    break;      
+            
+                case 1:
+                    answerPhrase = `Наверное, это число ${answerNumber }?`
+                    break;
+
+                case 2: 
+                    answerPhrase = `Возможно ${answerNumber }?`
+                    break;      
+            
+                case 3:
+                    answerPhrase = `Это число ${answerNumber }?`
+                    break;
+
+                case 4:
+                    answerPhrase = `Скорее всего это число ${answerNumber }?`
+                    break;
+            }
+            /* Старый метод генерации фразы спомощью тернарного оператора.
             const answerPhrase = (phraseRandom === 1) ?
                 `Вы загадали число ${answerNumber }?` :
                 `Наверное, это число ${answerNumber }?`;
-
+            */
             answerField.innerText = answerPhrase;
         }
     }
@@ -84,11 +106,33 @@ document.getElementById('btnLess').addEventListener('click', function () { // К
             answerNumber = Math.floor((minValue + maxValue) / 2);
             orderNumber++;
             orderNumberField.innerText = orderNumber;
-            const phraseRandom = Math.round(Math.random() * 2); // Генерируется случайное число от 0 до 2.
+            const phraseRandom = Math.round(Math.random() * 4); // Генерируется случайное число от 0 до 4.
+            switch (phraseRandom) {
+                case 0: 
+                    answerPhrase = `Вы загадали число ${answerNumber }?`
+                    break;      
+            
+                case 1:
+                    answerPhrase = `Наверное, это число ${answerNumber }?`
+                    break;
+
+                case 2: 
+                    answerPhrase = `Возможно ${answerNumber }?`
+                    break;      
+            
+                case 3:
+                    answerPhrase = `Это число ${answerNumber }?`
+                    break;
+
+                case 4:
+                    answerPhrase = `Скорее всего это число ${answerNumber }?`
+                    break;
+            }
+            /* Старый метод генерации фразы спомощью тернарного оператора.
             const answerPhrase = (phraseRandom === 1) ?
                 `Вы загадали число ${answerNumber }?` :
                 `Наверное, это число ${answerNumber }?`;
-
+            */
             answerField.innerText = answerPhrase;
         }
     }
@@ -105,4 +149,3 @@ document.getElementById('btnEqual').addEventListener('click', function () { // �
         gameRun = false;
     }
 })
-
