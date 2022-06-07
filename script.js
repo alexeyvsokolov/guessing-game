@@ -62,7 +62,7 @@ document.getElementById('btnOver').addEventListener('click', function () { // К
 
 document.getElementById('btnLess').addEventListener('click', function () { // Код для кнопки «Меньше».
     if (gameRun){
-        if (minValue === maxValue){
+        if (minValue === maxValue || minValue == answerNumber){
             const phraseRandom = Math.round(Math.random());
             const answerPhrase = (phraseRandom === 1) ?
                 `Вы загадали неправильное число!\n\u{1F914}` :
