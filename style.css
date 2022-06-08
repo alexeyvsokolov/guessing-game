@@ -14,3 +14,12 @@
 .card-body {
     background-color: rgba(207, 221, 14, 0.151);
 }
+
+#btnRetry {
+    text-decoration: none;
+    color: rgb(37, 2, 194);
+}
+
+#btnRetry a:hover {
+    color: green;
+}
