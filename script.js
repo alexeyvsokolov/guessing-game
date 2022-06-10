@@ -252,8 +252,20 @@ function numberToText() { // Текстовая запись числа
         return text;
     }
 
-    if (number > 0) {
+    if (number <= 9) {
         return units[Math.floor(number / 1)];
+    }
+
+    if (number > 9 && number < 20) {
+        return teens[(Math.floor(number / 10)) + (number % 10)];
+    }
+
+    if (number >= 20 && number <= 99) {
+        return dozens[(Math.floor(number / 10)) - 1]   
+    }
+
+    if (number >= 100 && number <= 999) {
+        return hundreds[Math.floor(number / 10)]   
     }
 
 
