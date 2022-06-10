@@ -261,11 +261,11 @@ function numberToText() { // Текстовая запись числа
     }
 
     if (number >= 20 && number <= 99) {
-        return dozens[(Math.floor(number / 10)) - 1] + " " + units[Math.floor(number / 1)];
+        return dozens[(Math.floor(number / 10)) - 1] + " " + units[Math.floor(number % 10)];
     }
 
     if (number >= 100 && number <= 999) {
-        return hundreds[Math.floor(number / 100)] + " " + teens[(Math.floor(number / 10)) + (number % 10)] + " " + dozens[(Math.floor(number % 10)) - 1] + " " + units[Math.floor(number % 10)]; // ИСПРАВИТЬ
+        return hundreds[Math.floor(number / 100)] + " " + teens[((Math.floor(number / 100)) + (number % 10)) - 1] + " " + dozens[(Math.floor(number % 10)) - 1] + " " + units[Math.floor(number % 10)];
     }
 
 
