@@ -80,23 +80,23 @@ document.getElementById('btnOver').addEventListener('click', function () { // К
             const phraseRandom = Math.round(Math.random() * 4); // Генерируется случайное число от 0 до 4.
             switch (phraseRandom) {
                 case 0: 
-                    answerPhrase = `Вы загадали число ${answerNumber }?`
+                    answerPhrase = `Вы загадали число `
                     break;      
             
                 case 1:
-                    answerPhrase = `Наверное, это число ${answerNumber }?`
+                    answerPhrase = `Наверное, это число `
                     break;
 
                 case 2: 
-                    answerPhrase = `Возможно ${answerNumber }?`
+                    answerPhrase = `Возможно `
                     break;      
             
                 case 3:
-                    answerPhrase = `Это число ${answerNumber }?`
+                    answerPhrase = `Это число `
                     break;
 
                 case 4:
-                    answerPhrase = `Скорее всего это число ${answerNumber }?`
+                    answerPhrase = `Скорее всего это число `
                     break;
             }
             /* Старый метод генерации фразы спомощью тернарного оператора.
@@ -104,7 +104,8 @@ document.getElementById('btnOver').addEventListener('click', function () { // К
                 `Вы загадали число ${answerNumber }?` :
                 `Наверное, это число ${answerNumber }?`;
             */
-            answerField.innerText = answerPhrase;
+            const numberWord = numberToText();
+            answerField.innerText = answerPhrase + numberWord + `?`;
         }
     }
 })
@@ -223,7 +224,7 @@ document.getElementById('btnEqual').addEventListener('click', function () { // �
             `Я всегда угадываю\n\u{1F60E}` :
             `Yes! \n\u{1F60E}`;
         */
-        answerField.innerText = answerPhrase
+        answerField.innerText = answerPhrase;
         gameRun = false;
     }
 })
@@ -243,7 +244,7 @@ let teens = ['', 'десять', 'одинадцать', 'двенадцать',
 let dozens = ['', 'двадцать', 'тридцать', 'сорок', 'пятьдесят', 'шестьдесят', 'семьдесят','восемьдесят', 'девяносто'];
 let hundreds = ['', 'сто', 'двести', 'триста', 'четыреста', 'пятьсот', 'шестьсот', 'семьсот', 'восемьсот', 'девятьсот'];
 
-function numberToText() { // Текстовая запись числа
+function numberToText() { // Функция преобразования числа из цифр в слова (числа от 0 до 999).
     let number = answerNumber;
     let text = '';
 
@@ -269,7 +270,7 @@ function numberToText() { // Текстовая запись числа
     }
 }
 
-function numberToTextHundreds() {
+function numberToTextHundreds() { // Функция вычисления остатка от сотого числа и преобразования его в числа из цифр в слова (числа от 0 до 99) для последующего присоединения к функции numberToText() расчитывающей сотни hundreds.
     let unitsTeensDozens = answerNumber % 100;
     
     if (unitsTeensDozens <= 9) {
