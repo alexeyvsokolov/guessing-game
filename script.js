@@ -94,7 +94,8 @@ document.getElementById('btnRetry').addEventListener('click', function () { // �
     answerNumber = Math.floor((minValue + maxValue) / 2); // Середина числового диапазона
     orderNumber = 1; // Номер первого вопроса.
     orderNumberField.innerText = orderNumber; // Вопрос № 1
-    answerField.innerText = `Вы загадали число ${answerNumber}?`;
+    //answerField.innerText = `Вы загадали число ${answerNumber}?`;
+    answerField.innerText = `Вы загадали число ${numberToText()}?`;
     gameRun = true;
 })
 
