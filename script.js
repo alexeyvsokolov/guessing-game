@@ -265,10 +265,22 @@ function numberToText() { // Текстовая запись числа
     }
 
     if (number >= 100 && number <= 999) {
-        return hundreds[Math.floor(number / 100)] + " " + teens[((Math.floor(number / 100)) + (number % 10)) - 1] + " " + dozens[(Math.floor(number % 10)) - 1] + " " + units[Math.floor(number % 10)];
+        return hundreds[Math.floor(number / 100)] + " " + numberToTextHundreds();
+    }
+}
+
+function numberToTextHundreds() {
+    let unitsTeensDozens = answerNumber % 100;
+    
+    if (unitsTeensDozens <= 9) {
+        return units[Math.floor(unitsTeensDozens / 1)];
     }
 
+    if (unitsTeensDozens > 9 && unitsTeensDozens < 20) {
+        return teens[(Math.floor(unitsTeensDozens / 10)) + (unitsTeensDozens % 10)];
+    }
 
-
-    
+    if (unitsTeensDozens >= 20 && unitsTeensDozens <= 99) {
+        return dozens[(Math.floor(unitsTeensDozens / 10)) - 1] + " " + units[Math.floor(unitsTeensDozens % 10)];
+    }
 }
