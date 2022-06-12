@@ -75,7 +75,7 @@ function numberToTextHundreds() { // Функция вычисления ост�
 
 orderNumberField.innerText = orderNumber; // Вопрос № 1
 const numberWord = numberToText();
-answerField.innerText = numberWord.length < 20 ? `Вы загадали число ${numberWord}?` : `Вы загадали число ${answerNumber}?` ;
+answerField.innerText = numberWord.length < 20 ? `Вы загадали число ${numberWord}?` : `Вы загадали число ${answerNumber}?`;
 // Вы загадали число [__]? - Середина числового диапазона (answerNumber - подставляется середина числового диапазона в функцию numberToText() которая преобразует в текст и записывается в переменную numberWord).
 
 document.getElementById('btnRetry').addEventListener('click', function () { // Кнопка "Заново"
@@ -94,7 +94,8 @@ document.getElementById('btnRetry').addEventListener('click', function () { // �
     answerNumber = Math.floor((minValue + maxValue) / 2); // Середина числового диапазона
     orderNumber = 1; // Номер первого вопроса.
     orderNumberField.innerText = orderNumber; // Вопрос № 1
-    answerField.innerText = `Вы загадали число ${numberToText()}?`;
+    const numberWord = numberToText();
+    answerField.innerText = numberWord.length < 20 ? `Вы загадали число ${numberWord}?` : `Вы загадали число ${answerNumber}?`;
     gameRun = true;
 })
 
@@ -149,7 +150,7 @@ document.getElementById('btnOver').addEventListener('click', function () { // К
                     break;
             }
             const numberWord = numberToText();
-            answerField.innerText = answerPhrase + numberWord + `?`;
+            answerField.innerText = numberWord.length < 20 ? answerPhrase + numberWord + `?` : answerPhrase + answerNumber + `?`;
         }
     }
 })
@@ -201,7 +202,7 @@ document.getElementById('btnLess').addEventListener('click', function () { // К
                     break;
             }            
             const numberWord = numberToText();
-            answerField.innerText = answerPhrase + numberWord + `?`;
+            answerField.innerText = numberWord.length < 20 ? answerPhrase + numberWord + `?` : answerPhrase + answerNumber + `?`;
         }
     }
 })
