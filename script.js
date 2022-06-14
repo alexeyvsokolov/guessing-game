@@ -40,8 +40,8 @@ function numberToText() { // Функция преобразования чис�
         return text;
     }
 
-    if (number <= 9) {
-        return units[Math.floor(number / 1)];
+    if (number <= 9 && number >= -9) {
+        return units[Math.floor(Math.abs(number) / 1)];
     }
 
     if (number > 9 && number < 20) {
@@ -75,7 +75,7 @@ function numberToTextHundreds() { // Функция вычисления ост�
 
 orderNumberField.innerText = orderNumber; // Вопрос № 1
 const numberWord = numberToText();
-answerField.innerText = numberWord.length < 20 ? `Вы загадали число ${numberWord}?` : `Вы загадали число ${answerNumber}?`;
+answerField.innerText = numberWord.length < 20 && answerNumber >= 0 ? `Вы загадали число ${numberWord}?` || `Вы загадали число ${answerNumber}?` : `Вы загадали число минус ${numberWord}?` || `Вы загадали число -${answerNumber}?`;
 // Вы загадали число [__]? - Середина числового диапазона (answerNumber - подставляется середина числового диапазона в функцию numberToText() которая преобразует в текст и записывается в переменную numberWord).
 
 document.getElementById('btnRetry').addEventListener('click', function () { // Кнопка "Заново"
