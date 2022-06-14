@@ -44,8 +44,8 @@ function numberToText() { // Функция преобразования чис�
         return units[Math.floor(Math.abs(number) / 1)];
     }
 
-    if (number > 9 && number < 20) {
-        return teens[(Math.floor(number / 10)) + (number % 10)];
+    if ((number > 9 && number < 20) || (number < -9 && number > -20)) {
+        return teens[Math.floor(Math.abs(number) / 10 + Math.abs(number) % 10)];
     }
 
     if (number >= 20 && number <= 99) {
