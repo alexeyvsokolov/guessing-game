@@ -48,12 +48,12 @@ function numberToText() { // Функция преобразования чис�
         return teens[Math.floor(Math.abs(number) / 10 + Math.abs(number) % 10)];
     }
 
-    if (number >= 20 && number <= 99) {
-        return dozens[(Math.floor(number / 10)) - 1] + " " + units[Math.floor(number % 10)];
+    if ((number >= 20 && number <= 99) || (number <= -20 && number >= -99)) {
+        return dozens[(Math.floor(Math.abs(number) / 10)) - 1] + " " + units[Math.floor(Math.abs(number) % 10)];
     }
 
-    if (number >= 100 && number <= 999) {
-        return hundreds[Math.floor(number / 100)] + " " + numberToTextHundreds();
+    if ((number >= 100 && number <= 999) || (number <= -100 && number >= -999)) {
+        return hundreds[Math.floor(Math.abs(number) / 100)] + " " + numberToTextHundreds();
     }
 }
 
