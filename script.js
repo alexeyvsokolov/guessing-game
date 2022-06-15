@@ -58,7 +58,7 @@ function numberToText() { // Функция преобразования чис�
 }
 
 function numberToTextHundreds() { // Функция вычисления остатка от сотого числа и преобразования его в числа из цифр в слова (числа от 0 до 99) для последующего присоединения к функции numberToText() расчитывающей сотни hundreds.
-    let unitsTeensDozens = answerNumber % 100;
+    let unitsTeensDozens = Math.abs(answerNumber) % 100;
     
     if (unitsTeensDozens <= 9) {
         return units[Math.floor(unitsTeensDozens / 1)];
@@ -75,7 +75,7 @@ function numberToTextHundreds() { // Функция вычисления ост�
 
 orderNumberField.innerText = orderNumber; // Вопрос № 1
 const numberWord = numberToText();
-answerField.innerText = numberWord.length < 20 && answerNumber >= 0 ? `Вы загадали число ${numberWord}?` || `Вы загадали число ${answerNumber}?` : `Вы загадали число минус ${numberWord}?` || `Вы загадали число -${answerNumber}?`;
+answerField.innerText = answerNumber >= 0 ? numberWord.length < 20 && answerNumber >= 0 ? `Вы загадали число ${numberWord}?` : `Вы загадали число ${answerNumber}?`: numberWord.length < 20 ? `Вы загадали число минус ${numberWord}?` : `Вы загадали число ${answerNumber}?`;
 // Вы загадали число [__]? - Середина числового диапазона (answerNumber - подставляется середина числового диапазона в функцию numberToText() которая преобразует в текст и записывается в переменную numberWord).
 
 document.getElementById('btnRetry').addEventListener('click', function () { // Кнопка "Заново"
