@@ -95,7 +95,7 @@ document.getElementById('btnRetry').addEventListener('click', function () { // �
     orderNumber = 1; // Номер первого вопроса.
     orderNumberField.innerText = orderNumber; // Вопрос № 1
     const numberWord = numberToText();
-    answerField.innerText = numberWord.length < 20 ? `Вы загадали число ${numberWord}?` : `Вы загадали число ${answerNumber}?`;
+    answerField.innerText = answerNumber >= 0 ? numberWord.length < 20 && answerNumber >= 0 ? `Вы загадали число ${numberWord}?` : `Вы загадали число ${answerNumber}?`: numberWord.length < 20 ? `Вы загадали число минус ${numberWord}?` : `Вы загадали число ${answerNumber}?`;
     gameRun = true;
 })
 
@@ -150,7 +150,7 @@ document.getElementById('btnOver').addEventListener('click', function () { // К
                     break;
             }
             const numberWord = numberToText();
-            answerField.innerText = numberWord.length < 20 ? answerPhrase + numberWord + `?` : answerPhrase + answerNumber + `?`;
+            answerField.innerText = answerNumber >= 0 ? numberWord.length < 20 && answerNumber >= 0 ? `Вы загадали число ${numberWord}?` : `Вы загадали число ${answerNumber}?`: numberWord.length < 20 ? `Вы загадали число минус ${numberWord}?` : `Вы загадали число ${answerNumber}?`;
         }
     }
 })
@@ -202,7 +202,7 @@ document.getElementById('btnLess').addEventListener('click', function () { // К
                     break;
             }            
             const numberWord = numberToText();
-            answerField.innerText = numberWord.length < 20 ? answerPhrase + numberWord + `?` : answerPhrase + answerNumber + `?`;
+            answerField.innerText = answerNumber >= 0 ? numberWord.length < 20 && answerNumber >= 0 ? `Вы загадали число ${numberWord}?` : `Вы загадали число ${answerNumber}?`: numberWord.length < 20 ? `Вы загадали число минус ${numberWord}?` : `Вы загадали число ${answerNumber}?`;
         }
     }
 })
