@@ -32,7 +32,7 @@ let dozens = ['', 'двадцать', 'тридцать', 'сорок', 'пят�
 let hundreds = ['', 'сто', 'двести', 'триста', 'четыреста', 'пятьсот', 'шестьсот', 'семьсот', 'восемьсот', 'девятьсот'];
 
 function numberToText() { // Функция преобразования числа из цифр в слова (числа от 0 до 999).
-    let number = answerNumber;
+    let number = Math.abs(answerNumber);
     let text = '';
 
     if (number == 0) {
@@ -40,20 +40,20 @@ function numberToText() { // Функция преобразования чис�
         return text;
     }
 
-    if (number <= 9 && number >= -9) {
+    if (number <= 9) {
         return units[Math.floor(Math.abs(number) / 1)];
     }
 
-    if ((number > 9 && number < 20) || (number < -9 && number > -20)) {
-        return teens[Math.floor(Math.abs(number) / 10 + Math.abs(number) % 10)];
+    if (number > 9 && number < 20) {
+        return teens[Math.floor(number / 10 + number % 10)];
     }
 
-    if ((number >= 20 && number <= 99) || (number <= -20 && number >= -99)) {
-        return dozens[(Math.floor(Math.abs(number) / 10)) - 1] + " " + units[Math.floor(Math.abs(number) % 10)];
+    if (number >= 20 && number <= 99) {
+        return dozens[(Math.floor(number / 10)) - 1] + " " + units[Math.floor(number % 10)];
     }
 
-    if ((number >= 100 && number <= 999) || (number <= -100 && number >= -999)) {
-        return hundreds[Math.floor(Math.abs(number) / 100)] + " " + numberToTextHundreds();
+    if (number >= 100 && number <= 999) {
+        return hundreds[Math.floor(number / 100)] + " " + numberToTextHundreds();
     }
 }
 
