@@ -1,3 +1,8 @@
+body {
+    background-image: url(https://novostivl.ru/wp-content/uploads/2022/07/24/1612739717_94-p-goluboi-fon-tsifri-164.jpg);
+    background-size: 100vw 100vh;
+}
+
 .game-card {
     height: 100vh;
     font-family: 'Open Sans', monospace;
