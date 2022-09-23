@@ -29,3 +29,8 @@ body {
     color: rgb(255, 18, 1);
     font-weight: bold;
 }
+
+#btnEqual {
+    margin-right: 20px;
+    margin-left: 20px;
+}
