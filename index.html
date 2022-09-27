@@ -15,17 +15,17 @@
                 <div class="card text-center">
                     <div class="card-header">
                         <p class="m-0 title-page">Игра УГАДАЙКА</p>
-                        <p class="m-0 value-range">Диапазон значений</p>
-                        <p class="m-0 terms">Условия</p>
-                        <p class="m-0 question">Вопрос № <span id="orderNumberField">5</span></p>
+                        <p class="m-0 value-range hidden">Диапазон значений</p> <!-- hidden -->
+                        <p class="m-0 terms hidden">Условия</p> <!-- hidden -->
+                        <p class="m-0 question hidden">Вопрос № <span id="orderNumberField">5</span></p> <!-- hidden -->
                     </div>
 
                     <div class="card-body">
 
-                        <p class="valueRange">Введите минимальное и максимальное значение числа для игры (от -999 до 999)</p>
-                        <p class="guessNumber"><span id="guessNumber"></span></p>
+                        <p class="valueRange hidden">Введите минимальное и максимальное значение числа для игры (от -999 до 999)</p>
+                        <p class="guessNumber hidden"><span id="guessNumber"></span></p>
 
-                        <form class="form-inline">
+                        <form class="form-inline hidden"> <!-- hidden -->
                             <div class="form-group">
                                 <label for="formGroupInput">От</label>
                                 <input type="text" class="form-control" id="formInputMin" placeholder="0">
@@ -36,7 +36,7 @@
                             </div>
                         </form>
 
-                        <div class="row no-gutters">
+                        <div class="row no-gutters hidden"> <!-- hidden -->
                             <div class="col">
                                 <h3 class="card-title m-0"><span id="answerField">Вы загадали число 5?</span></h3>
                             </div>
@@ -45,16 +45,16 @@
                     </div>
 
                     <div class="card-body">
-                        <button class="btn btn-info" id="btnLess">&#129047;<br>меньше</button>
-                        <button class="btn btn-success btn-lg" id="btnEqual">Верно!</button>
-                        <button class="btn btn-info" id="btnOver">больше<br>&#129045;</button>
+                        <button class="btn btn-info hidden" id="btnLess">&#129047;<br>меньше</button> <!-- hidden -->
+                        <button class="btn btn-success btn-lg hidden" id="btnEqual">Верно!</button> <!-- hidden -->
+                        <button class="btn btn-info hidden" id="btnOver">больше<br>&#129045;</button> <!-- hidden -->
                     </div>
                     
                     <div class="card-footer">
                         <button class="btn btn-success btnTobegin" id="btnTobegin">НАЧАТЬ ИГРУ</button>
-                        <button class="btn btn-success" id="btnProceed">ПРОДОЛЖИТЬ</button>
-                        <button class="btn btn-success" id="btnPlay">ИГРАТЬ</button>
-                        <button class="btn btn-link" id="btnRetry">Заново</button>
+                        <button class="btn btn-success hidden" id="btnProceed">ПРОДОЛЖИТЬ</button> <!-- hidden -->
+                        <button class="btn btn-success hidden" id="btnPlay">ИГРАТЬ</button> <!-- hidden -->
+                        <button class="btn btn-link hidden" id="btnRetry">Заново</button> <!-- hidden -->
                     </div>
                 </div>
             </div>
