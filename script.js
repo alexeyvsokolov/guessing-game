@@ -30,6 +30,18 @@ document.getElementById('btnProceed').addEventListener('click', function () {
     guessNumber.innerText = `Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`;
 })
 
+document.getElementById('btnPlay').addEventListener('click', function () {      // Клик по кнопке ИГРАТЬ --> Переход на карточку Вопрос №, с кнопками: меньше, больше, верно, заново
+    document.querySelector('.terms').classList.add('hidden');                   // Условия / класс опять меняется на hidden; надпись исчезает
+    document.querySelector('.guessNumber').classList.add('hidden');             // Загадайте любое целое число / класс меняется на hidden; надпись исчезает
+    document.querySelector('.question').classList.remove('hidden');             // Вопрос № / класс hidden удаляется; надпись появляется
+    document.querySelector('#btnPlay').classList.add('hidden');                 // Кнопка ИГРАТЬ / класс опять меняется на hidden; кнопка исчезает
+    document.querySelector('.no-gutters').classList.remove('hidden');           // Вы загадали число / класс hidden удаляется; надпись появляется
+    document.querySelector('#btnLess').classList.remove('hidden');              // Кнопка меньше / класс hidden удаляется; кнопка появляется
+    document.querySelector('#btnEqual').classList.remove('hidden');             // Кнопка Верно! / класс hidden удаляется; кнопка появляется
+    document.querySelector('#btnOver').classList.remove('hidden');              // Кнопка больше / класс hidden удаляется; кнопка появляется
+    document.querySelector('.btn-link').classList.remove('hidden');             // Кнопка Заново / класс hidden удаляется; кнопка появляется
+})
+
 let answerNumber = Math.floor((minValue + maxValue) / 2); // Середина числового диапазона
 let orderNumber = 1; // Номер первого вопроса.
 let gameRun = true;
