@@ -1,3 +1,12 @@
+document.getElementById('btnTobegin').addEventListener('click', function () {
+    document.querySelector('.title-page').classList.add('hidden');
+    document.querySelector('.value-range').classList.remove('hidden');
+    document.querySelector('.valueRange').classList.remove('hidden');
+    document.querySelector('.form-inline').classList.remove('hidden');
+    document.querySelector('#btnProceed').classList.remove('hidden');
+    document.querySelector('#btnTobegin').classList.add('hidden');
+})
+
 let minValue = parseInt(prompt('Минимальное знание числа для игры','0'));
 let maxValue = parseInt(prompt('Максимальное знание числа для игры','100'));
 
