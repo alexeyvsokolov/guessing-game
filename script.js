@@ -7,22 +7,29 @@ document.getElementById('btnTobegin').addEventListener('click', function () {
     document.querySelector('#btnTobegin').classList.add('hidden');
 })
 
-let minValue = parseInt(prompt('Минимальное знание числа для игры','0'));
-let maxValue = parseInt(prompt('Максимальное знание числа для игры','100'));
+document.getElementById('btnProceed').addEventListener('click', function () {
+    document.querySelector('.terms').classList.remove('hidden');
+    document.querySelector('#btnPlay').classList.remove('hidden');
+    document.querySelector('.value-range').classList.add('hidden');
+    document.querySelector('.valueRange').classList.add('hidden');
+    document.querySelector('.form-inline').classList.add('hidden');
+    document.querySelector('#btnProceed').classList.add('hidden');
+    document.querySelector('.guessNumber').classList.remove('hidden');
 
-minValue = (minValue < -999) ? minValue = -999 : (minValue > 999) ? minValue = 999 : minValue;
-maxValue = (maxValue > 999) ? maxValue = 999 : (maxValue < -999) ? maxValue = -999 : maxValue;
+    minValue = parseInt(document.querySelector('#formInputMin').value);
+    maxValue = parseInt(document.querySelector('#formInputMax').value);
+    minValue = (minValue < -999) ? minValue = -999 : (minValue > 999) ? minValue = 999 : minValue;
+    maxValue = (maxValue > 999) ? maxValue = 999 : (maxValue < -999) ? maxValue = -999 : maxValue;
+    if (maxValue < minValue) {
+        [maxValue, minValue] = [minValue, maxValue]; // Значения меняются местами если max меньше min.
+    }
+    if (Number.isNaN(maxValue) || Number.isNaN(minValue)) {
+        minValue = 0;
+        maxValue = 100;
+    }
+    guessNumber.innerText = `Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`;
+})
 
-if (maxValue < minValue) {
-    [maxValue, minValue] = [minValue, maxValue]; // Значения меняются местами если max меньше min.
-}
-
-if (Number.isNaN(maxValue) || Number.isNaN(minValue)) {
-    minValue = 0;
-    maxValue = 100;
-}
-
-alert(`Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`);
 let answerNumber = Math.floor((minValue + maxValue) / 2); // Середина числового диапазона
 let orderNumber = 1; // Номер первого вопроса.
 let gameRun = true;
