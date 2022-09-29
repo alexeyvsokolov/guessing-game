@@ -1,4 +1,7 @@
-document.getElementById('btnTobegin').addEventListener('click', function () {
+// Первая карточка - Игра УГАДАЙКА, кнопка НАЧАТЬ ИГРУ
+// Клик по кнопке НАЧАТЬ ИГРУ
+// Диапазон значений Введите минимальное и максимальное значение числа для игры (от -999 до 999), кнопка ПРОДОЛЖИТЬ
+document.getElementById('btnTobegin').addEventListener('click', function () {   // Клик по кнопке НАЧАТЬ ИГРУ --> Переход на карточку Диапазон значений
     document.querySelector('.title-page').classList.add('hidden');
     document.querySelector('.value-range').classList.remove('hidden');
     document.querySelector('.valueRange').classList.remove('hidden');
@@ -7,7 +10,9 @@ document.getElementById('btnTobegin').addEventListener('click', function () {
     document.querySelector('#btnTobegin').classList.add('hidden');
 })
 
-document.getElementById('btnProceed').addEventListener('click', function () {
+// Клик по кнопке ПРОДОЛЖИТЬ
+// Условия, Загадайте любое целое число от 0 до 100, а я его угадаю, кнопка ИГРАТЬ
+document.getElementById('btnProceed').addEventListener('click', function () {   // Клик по кнопке ПРОДОЛЖИТЬ --> Переход на карточку Условия с кнопкой ИГРАТЬ
     document.querySelector('.terms').classList.remove('hidden');
     document.querySelector('#btnPlay').classList.remove('hidden');
     document.querySelector('.value-range').classList.add('hidden');
@@ -30,6 +35,8 @@ document.getElementById('btnProceed').addEventListener('click', function () {
     guessNumber.innerText = `Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`;
 })
 
+// Клик по кнопке ИГРАТЬ
+// Сама Игра - Карточка с Вопросом, кнопками: меньше, больше, верно, заново
 document.getElementById('btnPlay').addEventListener('click', function () {      // Клик по кнопке ИГРАТЬ --> Переход на карточку Вопрос №, с кнопками: меньше, больше, верно, заново
     document.querySelector('.terms').classList.add('hidden');                   // Условия / класс опять меняется на hidden; надпись исчезает
     document.querySelector('.guessNumber').classList.add('hidden');             // Загадайте любое целое число / класс меняется на hidden; надпись исчезает
@@ -233,7 +240,7 @@ document.getElementById('btnPlay').addEventListener('click', function () {      
     })
 })
 
-document.getElementById('btnRetry').addEventListener('click', function () {
+document.getElementById('btnRetry').addEventListener('click', function () {     // Кнопка "Заново"--> Переход на карточку Диапазон значений
     document.querySelector('.value-range').classList.toggle('hidden');
     document.querySelector('.valueRange').classList.toggle('hidden');
     document.querySelector('.form-inline').classList.toggle('hidden');
@@ -257,7 +264,9 @@ document.getElementById('btnRetry').addEventListener('click', function () {
     }
     guessNumber.innerText = `Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`;
 
-    document.getElementById('btnProceed').addEventListener('click', function () {
+    // Клик по кнопке ПРОДОЛЖИТЬ
+    // Условия, Загадайте любое целое число от 0 до 100, а я его угадаю, кнопка ИГРАТЬ
+    document.getElementById('btnProceed').addEventListener('click', function () {   // Клик по кнопке ПРОДОЛЖИТЬ --> Переход на карточку Условия с кнопкой ИГРАТЬ
         document.querySelector('.terms').classList.remove('hidden');
         document.querySelector('#btnPlay').classList.remove('hidden');
         document.querySelector('.value-range').classList.add('hidden');
