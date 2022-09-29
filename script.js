@@ -256,4 +256,15 @@ document.getElementById('btnRetry').addEventListener('click', function () {
         maxValue = 100;
     }
     guessNumber.innerText = `Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`;
+
+    document.getElementById('btnProceed').addEventListener('click', function () {
+        document.querySelector('.terms').classList.remove('hidden');
+        document.querySelector('#btnPlay').classList.remove('hidden');
+        document.querySelector('.value-range').classList.add('hidden');
+        document.querySelector('.valueRange').classList.add('hidden');
+        document.querySelector('.form-inline').classList.add('hidden');
+        document.querySelector('#btnProceed').classList.add('hidden');
+        document.querySelector('.guessNumber').classList.remove('hidden');
+    })
+
 })
