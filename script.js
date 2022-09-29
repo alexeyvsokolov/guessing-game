@@ -233,9 +233,19 @@ document.getElementById('btnPlay').addEventListener('click', function () {      
     })
 })
 
-/* document.getElementById('btnRetry').addEventListener('click', function () { // Кнопка "Заново"
-    minValue = parseInt(prompt('Минимальное знание числа для игры','0'));
-    maxValue = parseInt(prompt('Максимальное знание числа для игры','100'));
+document.getElementById('btnRetry').addEventListener('click', function () {
+    document.querySelector('.value-range').classList.toggle('hidden');
+    document.querySelector('.valueRange').classList.toggle('hidden');
+    document.querySelector('.form-inline').classList.toggle('hidden');
+    document.querySelector('#btnProceed').classList.toggle('hidden');
+    document.querySelector('.question').classList.toggle('hidden');
+    document.querySelector('.no-gutters').classList.toggle('hidden');
+    document.querySelector('#btnLess').classList.toggle('hidden');
+    document.querySelector('#btnEqual').classList.toggle('hidden');
+    document.querySelector('#btnOver').classList.toggle('hidden');
+    document.querySelector('.btn-link').classList.toggle('hidden');
+    document.querySelector('#formInputMin').value = '';
+    document.querySelector('#formInputMax').value = '';
     minValue = (minValue < -999) ? minValue = -999 : (minValue > 999) ? minValue = 999 : minValue;
     maxValue = (maxValue > 999) ? maxValue = 999 : (maxValue < -999) ? maxValue = -999 : maxValue;
     if (maxValue < minValue) {
@@ -245,10 +255,5 @@ document.getElementById('btnPlay').addEventListener('click', function () {      
         minValue = 0;
         maxValue = 100;
     }
-    alert(`Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`);
-    answerNumber = Math.floor((minValue + maxValue) / 2); // Середина числового диапазона
-    orderNumber = 1; // Номер первого вопроса.
-    orderNumberField.innerText = orderNumber; // Вопрос № 1
-    answerField.innerText = answerNumber >= 0 ? numberToText().length < 20 && answerNumber >= 0 ? `Вы загадали число ${numberToText()}?` : `Вы загадали число ${answerNumber}?`: numberToText().length < 20 ? `Вы загадали число минус ${numberToText()}?` : `Вы загадали число ${answerNumber}?`;
-    gameRun = true;
-}) */
+    guessNumber.innerText = `Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`;
+})
