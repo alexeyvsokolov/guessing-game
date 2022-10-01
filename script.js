@@ -6,19 +6,19 @@ document.getElementById('btnTobegin').addEventListener('click', function () {   
     document.querySelector('.value-range').classList.remove('hidden');          // Диапазон значений / класс hidden удаляется; надпись появляется
     document.querySelector('.valueRange').classList.remove('hidden');           // Диапазон значений Текст / класс hidden удаляется; надпись появляется
     document.querySelector('.form-inline').classList.remove('hidden');          // Форма мин мах / класс hidden удаляется; форма появляется
-    document.querySelector('#btnProceed').classList.remove('hidden');           // Кнопка Продолжить / класс hidden удаляется; кнопка появляется
     document.querySelector('#btnTobegin').classList.add('hidden');              // Кнопка НАЧАТЬ ИГРУ / добавляется класс hidden; кнопка исчезает
+    document.querySelector('#btnProceed').classList.remove('hidden');           // Кнопка ПРОДОЛЖИТЬ / класс hidden удаляется; кнопка появляется
 })
 
 // Клик по кнопке ПРОДОЛЖИТЬ
 // Условия, Загадайте любое целое число от 0 до 100, а я его угадаю, кнопка ИГРАТЬ
 document.getElementById('btnProceed').addEventListener('click', function () {   // Клик по кнопке ПРОДОЛЖИТЬ --> Переход на карточку Условия с кнопкой ИГРАТЬ
-    document.querySelector('.terms').classList.remove('hidden');                // Условия / класс hidden удаляется; надпись появляется
     document.querySelector('.value-range').classList.add('hidden');             // Диапазон значений / опять добавляется класс hidden; надпись исчезает
+    document.querySelector('.terms').classList.remove('hidden');                // Условия / класс hidden удаляется; надпись появляется
     document.querySelector('.valueRange').classList.add('hidden');              // Диапазон значений Текст / опять добавляется класс hidden; надпись исчезает
     document.querySelector('.form-inline').classList.add('hidden');             // Форма мин мах / опять добавляется класс hidden; форма исчезает
     document.querySelector('.guessNumber').classList.remove('hidden');          // Фраза Загадайте любое целое число / класс hidden удаляется; Фраза появляется
-    document.querySelector('#btnProceed').classList.add('hidden');              // Кнопка Продолжить / опять добавляется класс hidden; кнопка исчезает
+    document.querySelector('#btnProceed').classList.add('hidden');              // Кнопка ПРОДОЛЖИТЬ / опять добавляется класс hidden; кнопка исчезает
     document.querySelector('#btnPlay').classList.remove('hidden');              // Кнопка ИГРАТЬ / класс hidden удаляется; кнопка появляется
     minValue = parseInt(document.querySelector('#formInputMin').value);
     maxValue = parseInt(document.querySelector('#formInputMax').value);
@@ -38,10 +38,10 @@ document.getElementById('btnProceed').addEventListener('click', function () {   
 // Сама Игра - Карточка с Вопросом, кнопками: меньше, больше, верно, заново
 document.getElementById('btnPlay').addEventListener('click', function () {      // Клик по кнопке ИГРАТЬ --> Переход на карточку Вопрос №, с кнопками: меньше, больше, верно, заново
     document.querySelector('.terms').classList.add('hidden');                   // Условия / опять добавляется класс hidden; надпись исчезает
-    document.querySelector('.guessNumber').classList.add('hidden');             // Фраза Загадайте любое целое число / опять добавляется класс hidden; надпись исчезает
     document.querySelector('.question').classList.remove('hidden');             // Вопрос № / класс hidden удаляется; надпись появляется
-    document.querySelector('#btnPlay').classList.add('hidden');                 // Кнопка ИГРАТЬ / опять добавляется класс hidden; кнопка исчезает
+    document.querySelector('.guessNumber').classList.add('hidden');             // Фраза Загадайте любое целое число / опять добавляется класс hidden; надпись исчезает
     document.querySelector('.no-gutters').classList.remove('hidden');           // Вы загадали число / класс hidden удаляется; надпись появляется
+    document.querySelector('#btnPlay').classList.add('hidden');                 // Кнопка ИГРАТЬ / опять добавляется класс hidden; кнопка исчезает
     document.querySelector('#btnLess').classList.remove('hidden');              // Кнопка меньше / класс hidden удаляется; кнопка появляется
     document.querySelector('#btnEqual').classList.remove('hidden');             // Кнопка Верно! / класс hidden удаляется; кнопка появляется
     document.querySelector('#btnOver').classList.remove('hidden');              // Кнопка больше / класс hidden удаляется; кнопка появляется
@@ -239,17 +239,19 @@ document.getElementById('btnPlay').addEventListener('click', function () {      
     })
 })
 
-document.getElementById('btnRetry').addEventListener('click', function () {     // Кнопка "Заново"--> Переход на карточку Диапазон значений
+// Клик по кнопке Заново
+// Диапазон значений Введите минимальное и максимальное значение числа для игры (от -999 до 999), кнопка ПРОДОЛЖИТЬ
+document.getElementById('btnRetry').addEventListener('click', function () {     // Клик по кнопке Заново --> Переход на карточку Диапазон значений
+    document.querySelector('.question').classList.toggle('hidden');             // Вопрос № / опять добавляется класс hidden; надпись исчезает
     document.querySelector('.value-range').classList.toggle('hidden');          // Диапазон значений / класс hidden удаляется; надпись появляется
+    document.querySelector('.no-gutters').classList.toggle('hidden');           // Вы загадали число / опять добавляется класс hidden; надпись исчезает
     document.querySelector('.valueRange').classList.toggle('hidden');           // Диапазон значений Текст / класс hidden удаляется; надпись появляется
     document.querySelector('.form-inline').classList.toggle('hidden');          // Форма мин мах / класс hidden удаляется; форма появляется
-    document.querySelector('#btnProceed').classList.toggle('hidden');           // Кнопка Продолжить / класс hidden удаляется; кнопка появляется
-    document.querySelector('.question').classList.toggle('hidden');             // Вопрос № / опять добавляется класс hidden; надпись исчезает
-    document.querySelector('.no-gutters').classList.toggle('hidden');           // Вы загадали число / опять добавляется класс hidden; надпись исчезает
     document.querySelector('#btnLess').classList.toggle('hidden');              // Кнопка меньше / опять добавляется класс hidden; кнопка исчезает
     document.querySelector('#btnEqual').classList.toggle('hidden');             // Кнопка Верно! / опять добавляется класс hidden; кнопка исчезает
     document.querySelector('#btnOver').classList.toggle('hidden');              // Кнопка больше / опять добавляется класс hidden; кнопка исчезает
     document.querySelector('.btn-link').classList.toggle('hidden');             // Кнопка Заново / опять добавляется класс hidden; кнопка исчезает
+    document.querySelector('#btnProceed').classList.toggle('hidden');           // Кнопка Продолжить / класс hidden удаляется; кнопка появляется
     document.querySelector('#formInputMin').value = '';
     document.querySelector('#formInputMax').value = '';
     minValue = (minValue < -999) ? minValue = -999 : (minValue > 999) ? minValue = 999 : minValue;
@@ -266,12 +268,12 @@ document.getElementById('btnRetry').addEventListener('click', function () {     
     // Клик по кнопке ПРОДОЛЖИТЬ
     // Условия, Загадайте любое целое число от 0 до 100, а я его угадаю, кнопка ИГРАТЬ
     document.getElementById('btnProceed').addEventListener('click', function () {   // Клик по кнопке ПРОДОЛЖИТЬ --> Переход на карточку Условия с кнопкой ИГРАТЬ
-        document.querySelector('.terms').classList.remove('hidden');                // Условия / класс hidden удаляется; надпись появляется
         document.querySelector('.value-range').classList.add('hidden');             // Диапазон значений / опять добавляется класс hidden; надпись исчезает
+        document.querySelector('.terms').classList.remove('hidden');                // Условия / класс hidden удаляется; надпись появляется
         document.querySelector('.valueRange').classList.add('hidden');              // Диапазон значений Текст / опять добавляется класс hidden; надпись исчезает
-        document.querySelector('.form-inline').classList.add('hidden');             // Форма мин мах / опять добавляется класс hidden; форма исчезает
+        document.querySelector('.form-inline').classList.add('hidden');             // Форма min max / опять добавляется класс hidden; форма исчезает
         document.querySelector('.guessNumber').classList.remove('hidden');          // Фраза Загадайте любое целое число / класс hidden удаляется; Фраза появляется
-        document.querySelector('#btnProceed').classList.add('hidden');              // Кнопка Продолжить / опять добавляется класс hidden; кнопка исчезает
+        document.querySelector('#btnProceed').classList.add('hidden');              // Кнопка ПРОДОЛЖИТЬ / опять добавляется класс hidden; кнопка исчезает
         document.querySelector('#btnPlay').classList.remove('hidden');              // Кнопка ИГРАТЬ / класс hidden удаляется; кнопка появляется
     })
 })
